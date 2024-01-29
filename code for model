@@ -1,0 +1,95 @@
+d = input("enter dryness value in 0 to 1 range")
+d = float(d)
+e = 1-d
+h = input("enter heat from sun per unit area unit time")
+h = float(h)
+#total water =
+e_gc = d*0.5
+p_cg = e*0.5
+w_go = 0.125 - d*0.125
+w_gp = 0.25 - d*0.25 + e*0.25
+re = 10000
+m3 = 3.14*re*100
+m1=m3
+sun_o = h*3.14*re*re*2.845
+A1 = 3.14*re*re*1.1547
+grad_w = -2
+grad_i = -1
+A3 = A1
+gr_w = -1
+gr_i = -0.5
+A4 = re*re*3.14*0.268
+alp = input("enter death rate of plants")
+bet = input("growth rate of plants")
+alp = float(alp)
+bet = float(bet)
+n = 0.01*w_gp
+g = w_gp*180/108
+b = w_gp + n + g
+grad_soil = -1
+sun_l = h*3.14*re*re*0.288
+sun_p = sun_l
+w_gp = (1-alp+bet)*w_gp
+n = (1-alp+bet)*n
+sun_p = (1-alp+bet)*sun_p
+s = input("enter sandiness s between 0 and 1")
+s = float(s)
+h_vap = 3.6276*re*re*h*s
+k_l = h*(0.25 + 0.5*s)
+k_w = h*0.2
+k_i = h*0.1
+h_ovap = 1.1918*h*re*re
+e_oc = 1.826
+f_h = -1.72*((int(10)^(int(-17))))*(h-500)
+st = (int(4.189))*(int(500-h))*((int(re+500)^(int(2))) + (int(re+h))^(int(2)) +(int(re+h))*(int(re+500)))
+p_co = e_gc + e_oc - st - p_cg
+l = h/10
+A2 = A4
+X_hc = h/10
+A5 = 1.81*re*re
+
+
+
+
+#1)change in water in oceans
+o_c = w_go + p_co + m1 - m3 - e_oc
+
+#energy balance of oceans
+
+sun_o = -k_w*A1*grad_w + l*m1 - k_i*A2*grad_i + e_oc*h_ovap -k_w*A3*gr_w -k_i*A4*gr_i +X_hc - l*m3
+
+#2)decomposers
+
+alp*(b - g - w_gp) - bet*(b - g - w_gp)
+
+#3)clouds mass balance
+
+e_oc + e_gc - p_co - p_cg
+
+#write the condensation, rain term
+
+#4)ground water balance
+
+p_cg - e_gc - w_go -w_gp
+
+#energy balance
+
+r = -e_gc*h_vap + sun_l + k_l*A5*grad_soil
+
+#5)plants biomass change
+
+b = w_gp + n + g
+
+b_c = w_gp - alp*(b - w_gp) + bet*(b - w_gp)
+
+gibb = 2878.62
+#gibbs free enregy needed to push the photosythesis reaction to equillibrium in kj/mol
+
+photo = b_c*gibb/72
+
+ref = sun_p - photo
+print(photo)
+print(e_oc)
+print(b)
+print(o_c)
+#determine amount of photosynthesis
